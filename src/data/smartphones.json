@@ -1,0 +1,102 @@
+[
+  {
+    "Apple": [
+      {
+        "iPhone 14 Pro": [
+          {
+            "ÉcranApple": {
+              "Nom": "Super Retina XDR",
+              "Prix": 299,
+              "Tuto": "https://www.example.com/tuto/iphone-14-pro-ecran"
+            }
+          },
+          {
+            "Processeur": {
+              "Nom": "A15 Bionic",
+              "Prix": 199,
+              "Tuto": "https://www.example.com/tuto/iphone-14-pro-processeur"
+            }
+          },
+          {
+            "Mémoire": {
+              "Nom": "8 Go de RAM",
+              "Prix": 99,
+              "Tuto": "https://www.example.com/tuto/iphone-14-pro-memoire"
+            }
+          },
+          {
+            "Stockage": {
+              "Nom": "128 Go",
+              "Prix": 149,
+              "Tuto": "https://www.example.com/tuto/iphone-14-pro-stockage"
+            }
+          }
+        ]
+      }
+    ],
+    "Samsung": [
+      {
+        "Galaxy S23 Ultra": [
+          {
+            "Écran": {
+              "Nom": "Dynamic AMOLED",
+              "Prix": 249,
+              "Tuto": "https://www.example.com/tuto/galaxy-s23-ultra-ecran"
+            }
+          },
+          {
+            "Processeur": {
+              "Nom": "Exynos 1000",
+              "Prix": 199,
+              "Tuto": "https://www.example.com/tuto/galaxy-s23-ultra-processeur"
+            }
+          },
+          {
+            "Mémoire": {
+              "Nom": "12 Go de RAM",
+              "Prix": 149,
+              "Tuto": "https://www.example.com/tuto/galaxy-s23-ultra-memoire"
+            }
+          },
+          {
+            "Stockage": {
+              "Nom": "256 Go",
+              "Prix": 199,
+              "Tuto": "https://www.example.com/tuto/galaxy-s23-ultra-stockage"
+            }
+          }
+        ],
+        "Galaxy S24 Mini": [
+          {
+            "Écran": {
+              "Nom": "Dynamic AMOLED",
+              "Prix": 249,
+              "Tuto": "https://www.example.com/tuto/galaxy-s24-mini-ecran"
+            }
+          },
+          {
+            "Processeur": {
+              "Nom": "Exynos 1000",
+              "Prix": 199,
+              "Tuto": "https://www.example.com/tuto/galaxy-s24-mini-processeur"
+            }
+          },
+          {
+            "Mémoire": {
+              "Nom": "12 Go de RAM",
+              "Prix": 149,
+              "Tuto": "https://www.example.com/tuto/galaxy-s24-mini-memoire"
+            }
+          },
+          {
+            "Stockage": {
+              "Nom": "256 Go",
+              "Prix": 199,
+              "Tuto": "https://www.example.com/tuto/galaxy-s24-mini-stockage"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,18 +1,20 @@
-@import './base.css';
+
+
+:root {
+  --background: #1F1549;
+  --green-forfait : #217d3f;
+  --warning-forfait : #fba302;
+  --text-color : white;
+  --text-two-color: #00e164;
+  --questions-height: 600px; /* Définissez la valeur initiale de la variable */
+}
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  font-family: Poppins, sans-serif;
 }
 
 @media (hover: hover) {

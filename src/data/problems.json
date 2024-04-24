@@ -1,0 +1,23 @@
+{
+  "Écran": [
+    "Mon écran est fissuré",
+    "L'écran répond mal",
+    "L'écran est noir"
+  ],
+  "Batterie": [
+    "Ma batterie se décharge rapidement",
+    "Mon téléphone ne s'allume plus"
+  ],
+  "Appareil photo": [
+    "Mon appareil photo ne fonctionne pas",
+    "Les photos sont floues"
+  ],
+  "Haut-parleur": [
+    "Pas de son",
+    "Son distordu"
+  ],
+  "Connectivité": [
+    "Problème de WiFi",
+    "Problème de Bluetooth"
+  ]
+}
