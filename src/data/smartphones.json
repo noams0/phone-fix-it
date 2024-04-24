@@ -29,6 +29,11 @@
               "Nom": "128 Go",
               "Prix": 149,
               "Tuto": "https://www.example.com/tuto/iphone-14-pro-stockage"
+            },
+            "Batterie": {
+              "Nom": "4550Am",
+              "Prix": 149,
+              "Tuto": "https://www.example.com/tuto/iphone-14-pro-batterie"
             }
           }
         ]
@@ -63,6 +68,11 @@
               "Nom": "256 Go",
               "Prix": 199,
               "Tuto": "https://www.example.com/tuto/galaxy-s23-ultra-stockage"
+            },
+            "Batterie": {
+              "Nom": "4550Am",
+              "Prix": 149,
+              "Tuto": "https://www.example.com/tuto/iphone-14-pro-stockage"
             }
           }
         ],

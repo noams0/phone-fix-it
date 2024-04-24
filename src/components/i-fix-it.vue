@@ -16,14 +16,15 @@
           <option v-for="model in models" :key="model" :value="model">{{ model }}</option>
         </select>
 
-        <label  v-if="selectedModel" for="component">Composant :</label>
-        <select v-model="selectedComponent" id="component" v-if="selectedModel">
+        <label  v-if="selectedModel" for="component">Problème :</label>
+        <select v-model="selectedProblem" id="component" v-if="selectedModel">
           <option value="">Sélectionner un composant</option>
-          <option v-for="component in components" :key="component" :value="component">{{ component }}</option>
+          <option v-for="problem in problems" :key="problem" :value="problem">{{ problem }}</option>
         </select>
         <button type="submit">Rechercher</button>
       </form>
       <div v-if="price">
+        <p>C'est certainemet un problème de {{selectedComponent}}</p>
         <p>Prix estimé : {{ price }} €</p>
         <p><a :href="tutorialLink" target="_blank">Tutoriel de réparation</a></p>
       </div>
@@ -34,11 +35,13 @@
 <script setup>
 import { ref, watch } from 'vue';
 import smartphonesData from "@/data/smartphones.json";
+import problemsData from "@/data/problems.json";
 
 const showForm = ref(false);
 const selectedBrand = ref('');
 const selectedModel = ref('');
 const selectedComponent = ref('');
+const selectedProblem = ref('');
 const price = ref(null);
 const tutorialLink = ref(null);
 
@@ -48,8 +51,30 @@ const brands = Object.keys(smartphonesData[0]);
 const getModelsForBrand = (brand) => {
   return Object.keys(smartphonesData[0][brand][0]);
 };
+const getProblemsForComposants = (components) => {
+  const foundProblems = [];
+  for (const component of components) {
+    if (component in problemsData) {
+      foundProblems.push(...problemsData[component]);
+    }
+  }
+  if (foundProblems.length > 0) {
+    return foundProblems;
+  } else {
+    console.log("Aucun problème trouvé pour les composants donnés");
+    return [];
+  }
+};
 
-// Fonction pour obtenir les composants associés à un modèle sélectionné
+const findComponentForProblem = (problem) => {
+  for (const component in problemsData) {
+    if (problemsData[component].includes(problem)) {
+      return component
+    }
+  }
+  return null;
+};
+
 // Fonction pour obtenir les composants associés à un modèle sélectionné
 const getComponentsForModel = (brand, model) => {
   if (smartphonesData[0][brand][0][model]) {
@@ -66,21 +91,25 @@ const getComponentsForModel = (brand, model) => {
 
 const models = ref([]);
 const components = ref([]);
+const problems = ref([]);
 
 // Mettre à jour les modèles en fonction de la marque sélectionnée
 watch(selectedBrand, (newBrand) => {
   models.value = getModelsForBrand(newBrand);
 });
-
 // Mettre à jour les composants en fonction du modèle sélectionné
 watch(selectedModel, (newModel) => {
   components.value = getComponentsForModel(selectedBrand.value, newModel);
+});
+watch(components, (newComponents) => {
+  problems.value = getProblemsForComposants(newComponents);
 });
 function toggleForm() {
   showForm.value = !showForm.value;
 }
 
 function submitForm() {
+  selectedComponent.value = findComponentForProblem(selectedProblem.value)
   if (smartphonesData[0][selectedBrand.value][0][selectedModel.value]) {
     for (const componentObj of smartphonesData[0][selectedBrand.value][0][selectedModel.value]) {
       for (const key in componentObj) {
